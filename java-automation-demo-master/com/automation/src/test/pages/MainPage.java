@@ -16,6 +16,9 @@ public class MainPage extends BasePage {
 			"body > div:nth-child(3) > div.optanon-alert-box-bg > div.optanon-alert-box-button-container > div.optanon-alert-box-button.optanon-button-allow > div > button"),
 			true);
 
+	public final PageElement covidBannerCloseButton = new PageElement("Covid Banner Close Button",
+			By.cssSelector("div[class='covid-banner__close']"), true);
+
 	public final PageElement baseTitleOnMainPage = new PageElement("Base Title Of Page",
 			By.cssSelector("h1[class='hc-title']"), true);
 
@@ -25,8 +28,10 @@ public class MainPage extends BasePage {
 			By.xpath("//a[@class='mobile-menu__item md-screen-hidden']//div[text()='Hair']"), true);
 
 	public void closeCookie() {
-		waitToBeClickable(cookies, 10);
-		click(cookies);
+//		waitToBeClickable(cookies, 5);
+		waitToBeClickable(covidBannerCloseButton);
+		click(covidBannerCloseButton);
+		click(covidBannerCloseButton);
 	}
 
 	public void navigetingToHairLossPage() {

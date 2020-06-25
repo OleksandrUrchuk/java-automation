@@ -36,5 +36,4 @@ public class BaseTest {
 		mainPage = new MainPage(driver);
 		hairLossPage = new HairLossPage(driver);
 	}
-
 }

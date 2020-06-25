@@ -14,6 +14,7 @@ public class Task1Test extends BaseTest {
 		hairLossPage.scrollToView(hairLossPage.doctorBlock);
 		hairLossPage.scrollToView(hairLossPage.howItWorksBlock);
 		hairLossPage.scrollToView(hairLossPage.quastionsAnsweredBlock);
+		Assert.assertEquals(hairLossPage.getText(hairLossPage.quastionsAnsweredBlock), "Read me, I’m important");
 		hairLossPage.scrollByPixels(7000);
 		hairLossPage.scrollToView(hairLossPage.helpingHairBlock);
 		hairLossPage.scrollToView(hairLossPage.stickyBlock);
