@@ -451,9 +451,17 @@ public abstract class BasePage {
         driver.findElement(element.locator).sendKeys(Keys.ARROW_DOWN);
     }
 
-    protected void scrollToView(PageElement pageElement){
+    public void scrollToView(PageElement pageElement){
+		log.info("Scrolling Page to : " + pageElement.name);
+		
         WebElement element = find(pageElement.locator);
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
-        Utils.sleep(500);
+        Utils.sleep(2000);
+        
+    }
+    public void scrollByPixels(int pixels){
+    	log.info("Scrolling Page by : " + pixels + " pixels");
+        ((JavascriptExecutor) driver).executeScript("window.scrollTo(document.body.scrollHeight, 7000)");  //	add re-useable parameters
+        Utils.sleep(2000);
     }
 }
