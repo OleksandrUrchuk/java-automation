@@ -35,8 +35,12 @@ public class HairLossPage extends BasePage {
 	public final PageElement stickyBlock = new PageElement("Sticky Block",
 			By.cssSelector("h4[class='Footer-title text-left h4 no-wrap']"), true);
 
-	public final PageElement addToCartButton = new PageElement("Add To Cart Button", By.cssSelector(
+	public final PageElement addToCartButton_1 = new PageElement("Add To Cart Button For 'The complete hair loss plan'", By.cssSelector(
 			"body.webp:nth-child(2) div.main-content section.section--hair-plans:nth-child(8) div.container:nth-child(3) div.HairPlanCard.mostEffective:nth-child(1) div.HairPlanCard--btn > button.btn"),
+			true);
+
+	public final PageElement addToCartButton_2 = new PageElement("Add To Cart Button For 'Finasteride hair loss plan'", By.cssSelector(
+			"	body.webp:nth-child(2) div.main-content section.section--hair-plans:nth-child(8) div.container:nth-child(3) div.HairPlanCard:nth-child(2) div.HairPlanCard--btn > button.btn"),
 			true);
 
 	public final PageElement closeCartButton = new PageElement("Close Cart Button",
@@ -46,14 +50,14 @@ public class HairLossPage extends BasePage {
 			true);
 
 	public final PageElement addedToCartButton = new PageElement("Added To Cart Button",
-			By.cssSelector("span[class='semibold']"), true);
+			By.cssSelector("button[class='btn btn--bg-light']"), true);
 
 	public final PageElement itemsInCart = new PageElement("Items In Cart",
 			By.cssSelector("div[class='cart__header-label']"), true);
 
-	public void clickAddToCartButton() {
-		waitToBeClickable(addToCartButton, 5);
-		click(addToCartButton);
+	public void clickAddToCartButton(PageElement pageElement) {
+		waitToBeClickable(pageElement, 5);
+		click(pageElement);
 	}
 
 	public void clickCloseCartButton() {

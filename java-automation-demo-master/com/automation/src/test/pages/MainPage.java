@@ -28,8 +28,8 @@ public class MainPage extends BasePage {
 			By.xpath("//a[@class='mobile-menu__item md-screen-hidden']//div[text()='Hair']"), true);
 
 	public void closeCookie() {
-//		waitToBeClickable(cookies, 5);
-		waitToBeClickable(covidBannerCloseButton);
+		waitToBeClickable(cookies, 5);
+		waitToBeClickable(covidBannerCloseButton, 5);
 		click(covidBannerCloseButton);
 		click(covidBannerCloseButton);
 	}
@@ -43,6 +43,12 @@ public class MainPage extends BasePage {
 		click(shopButton);
 		waitToBeClickable(hairButton);
 		click(hairButton);
+		try {
+			Thread.sleep(600);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	@Override

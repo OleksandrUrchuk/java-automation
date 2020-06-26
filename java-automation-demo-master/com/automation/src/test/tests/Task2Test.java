@@ -9,8 +9,7 @@ public class Task2Test extends BaseTest {
 	public void justTest() {
 		mainPage.navigetingToHairLossPage();
 		Assert.assertEquals(hairLossPage.getText(hairLossPage.baseTitleOnHairLossPage), "Hair Loss");
-		hairLossPage.scrollToView(hairLossPage.completeHairLossPlanBlock);
-		hairLossPage.clickAddToCartButton();
+		hairLossPage.clickAddToCartButton(hairLossPage.addToCartButton_1);
 		hairLossPage.clickCloseCartButton();
 		Assert.assertEquals(hairLossPage.getText(hairLossPage.iconCart), "1");
 		Assert.assertEquals(hairLossPage.getText(hairLossPage.addedToCartButton), "ADDED TO CART");
