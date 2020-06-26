@@ -9,6 +9,7 @@ public class Task1Test extends BaseTest {
 	@Test
 	public void justTest() {
 		mainPage.navigetingToHairLossPage();
+		hairLossPage.waitToBeVisible(hairLossPage.completeHairLossPlanBlock, 5);
 		assertEquals(driver.getTitle(), hairLossPage.expectedTitleOnHairLossPage);
 		hairLossPage.scrollToView(hairLossPage.completeHairLossPlanBlock);
 		hairLossPage.scrollToView(hairLossPage.alternativePlansBlock);

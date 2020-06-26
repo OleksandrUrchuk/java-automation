@@ -1,8 +1,8 @@
 package tests;
 
-import common.Config;
-import org.testng.Assert;
-import org.testng.annotations.Test;
+//import common.Config;
+//import org.testng.Assert;
+//import org.testng.annotations.Test;
 
 public class DemoTest extends BaseTest {
 

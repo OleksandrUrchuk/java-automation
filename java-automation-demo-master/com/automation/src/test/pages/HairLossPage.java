@@ -11,9 +11,6 @@ public class HairLossPage extends BasePage {
 		super(driver);
 	}
 
-//	public final PageElement baseTitleOnHairLossPage = new PageElement("Base Title Of Page",
-//			By.cssSelector("h1[class='hc-title']"), true);
-
 	public final String expectedTitleOnHairLossPage = "Buy Hair Loss Medication & Treatments Online - Works for 9/10 Men - UK Licensed Pharmacy | Manual";
 	
 	public final PageElement completeHairLossPlanBlock = new PageElement("Complete Hair Loss Plan Block",
