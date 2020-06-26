@@ -1,6 +1,7 @@
 package tests;
 
-import org.testng.Assert;
+import static org.testng.Assert.assertEquals;
+
 import org.testng.annotations.Test;
 
 public class Task1Test extends BaseTest {
@@ -8,17 +9,16 @@ public class Task1Test extends BaseTest {
 	@Test
 	public void justTest() {
 		mainPage.navigetingToHairLossPage();
-		Assert.assertEquals(hairLossPage.getText(hairLossPage.baseTitleOnHairLossPage), "Hair Loss");
+		assertEquals(driver.getTitle(), hairLossPage.expectedTitleOnHairLossPage);
 		hairLossPage.scrollToView(hairLossPage.completeHairLossPlanBlock);
 		hairLossPage.scrollToView(hairLossPage.alternativePlansBlock);
 		hairLossPage.scrollToView(hairLossPage.doctorBlock);
 		hairLossPage.scrollToView(hairLossPage.howItWorksBlock);
 		hairLossPage.scrollToView(hairLossPage.quastionsAnsweredBlock);
-		Assert.assertEquals(hairLossPage.getText(hairLossPage.quastionsAnsweredBlock), "Read me, I’m important");
+		assertEquals(hairLossPage.getText(hairLossPage.quastionsAnsweredBlock), "Read me, I’m important");
 		hairLossPage.scrollByPixels(7000);
 		hairLossPage.scrollToView(hairLossPage.helpingHairBlock);
 		hairLossPage.scrollToView(hairLossPage.stickyBlock);
-		Assert.assertEquals(hairLossPage.getText(hairLossPage.stickyBlock), "HAVE A QUESTION?");
-
+		assertEquals(hairLossPage.getText(hairLossPage.stickyBlock), "HAVE A QUESTION?");
 	}
 }

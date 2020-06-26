@@ -1,6 +1,7 @@
 package tests;
 
-import org.testng.Assert;
+import static org.testng.Assert.assertEquals;
+
 import org.testng.annotations.Test;
 
 public class Task2Test extends BaseTest {
@@ -8,10 +9,10 @@ public class Task2Test extends BaseTest {
 	@Test
 	public void justTest() {
 		mainPage.navigetingToHairLossPage();
-		Assert.assertEquals(hairLossPage.getText(hairLossPage.baseTitleOnHairLossPage), "Hair Loss");
+		assertEquals(driver.getTitle(), hairLossPage.expectedTitleOnHairLossPage);
 		hairLossPage.clickAddToCartButton(hairLossPage.addToCartButton_1);
 		hairLossPage.clickCloseCartButton();
-		Assert.assertEquals(hairLossPage.getText(hairLossPage.iconCart), "1");
-		Assert.assertEquals(hairLossPage.getText(hairLossPage.addedToCartButton), "ADDED TO CART");
+		assertEquals(hairLossPage.getText(hairLossPage.iconCart), "1");
+		assertEquals(hairLossPage.getText(hairLossPage.addedToCartButton), "ADDED TO CART");
 	}
 }

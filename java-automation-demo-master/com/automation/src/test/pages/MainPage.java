@@ -1,8 +1,9 @@
 package pages;
 
+import static org.testng.Assert.assertEquals;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
 
 import common.PageElement;
 
@@ -19,9 +20,11 @@ public class MainPage extends BasePage {
 	public final PageElement covidBannerCloseButton = new PageElement("Covid Banner Close Button",
 			By.cssSelector("div[class='covid-banner__close']"), true);
 
-	public final PageElement baseTitleOnMainPage = new PageElement("Base Title Of Page",
-			By.cssSelector("h1[class='hc-title']"), true);
+//	public final PageElement baseTitleOnMainPage = new PageElement("Base Title Of Page",
+//			By.cssSelector("h1[class='hc-title']"), true);
 
+	public final String expectedTitleOnMainPage = "Manual: Men's Healthcare. Made easy. More than a pharmacy.";
+	
 	public final PageElement shopButton = new PageElement("Shop Button", By.cssSelector("span[class='menu__link']"),
 			true);
 	public final PageElement hairButton = new PageElement("Hair Button",
@@ -37,14 +40,14 @@ public class MainPage extends BasePage {
 	public void navigetingToHairLossPage() {
 		log.info("Navigeting to the: " + HairLossPage.class);
 		closeCookie();
-		Assert.assertEquals(getText(baseTitleOnMainPage), "Men’s health. The way it should be.");
+		assertEquals(driver.getTitle(), expectedTitleOnMainPage);
 
 		waitToBeClickable(shopButton);
 		click(shopButton);
 		waitToBeClickable(hairButton);
 		click(hairButton);
 		try {
-			Thread.sleep(600);
+			Thread.sleep(700);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
