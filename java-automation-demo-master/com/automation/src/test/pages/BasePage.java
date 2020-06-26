@@ -25,9 +25,6 @@ public abstract class BasePage {
         log = Logger.getLogger(this.getClass().getCanonicalName());
     }
 
-    public abstract boolean pageIsDisplayed();
-
-
     public String getText(PageElement pageElement){
         log.info("Getting text of element: " + pageElement.name);
         return this.find(pageElement).getText();
@@ -118,11 +115,6 @@ public abstract class BasePage {
             }
         }
         return elements;
-    }
-
-    protected boolean allRequiredElementDisplayed(){
-        log.info("Checking if all required elements present on page");
-        return this.getMissingRequiredElements(this.getRequiredElements()).isEmpty();
     }
 
     public boolean isElementPresent(By element){

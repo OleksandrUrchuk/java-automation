@@ -63,9 +63,4 @@ public class HairLossPage extends BasePage {
 		waitToBeClickable(closeCartButton, 5);
 		click(closeCartButton);
 	}
-
-	@Override
-	public boolean pageIsDisplayed() {
-		return allRequiredElementDisplayed();
-	}
 }

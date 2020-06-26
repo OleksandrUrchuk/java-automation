@@ -44,9 +44,4 @@ public class MainPage extends BasePage {
 		waitToBeClickable(hairButton);
 		click(hairButton);
 	}
-
-	@Override
-	public boolean pageIsDisplayed() {
-		return allRequiredElementDisplayed();
-	}
 }
