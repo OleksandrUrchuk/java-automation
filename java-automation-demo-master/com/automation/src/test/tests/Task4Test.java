@@ -6,8 +6,8 @@ import org.testng.annotations.Test;
 
 public class Task4Test extends BaseTest {
 
-	@Test
-	public void justTest() {
+	@Test(description = "The 'Added to cart' button is displayed in the Sticky block")
+	public void addedToCartButtonIsDisplayedInStickyBlock() {
 		mainPage.navigetingToHairLossPage();
 		hairLossPage.waitToBeVisible(hairLossPage.completeHairLossPlanBlock, 5);
 		assertEquals(driver.getTitle(), hairLossPage.expectedTitleOnHairLossPage);

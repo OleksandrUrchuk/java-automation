@@ -6,8 +6,8 @@ import org.testng.annotations.Test;
 
 public class Task1Test extends BaseTest {
 
-	@Test
-	public void justTest() {
+	@Test(description = "Scrolling through blocks")
+	public void scrollingThroughBlocks() {
 		mainPage.navigetingToHairLossPage();
 		hairLossPage.waitToBeVisible(hairLossPage.completeHairLossPlanBlock, 5);
 		assertEquals(driver.getTitle(), hairLossPage.expectedTitleOnHairLossPage);

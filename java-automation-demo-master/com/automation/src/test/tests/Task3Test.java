@@ -6,8 +6,8 @@ import org.testng.annotations.Test;
 
 public class Task3Test extends BaseTest {
 
-	@Test
-	public void justTest() {
+	@Test(description = "The second product is not added to the cart")
+	public void secondProductIsNotAdded() {
 		mainPage.navigetingToHairLossPage();
 		hairLossPage.waitToBeVisible(hairLossPage.completeHairLossPlanBlock, 5);
 		assertEquals(driver.getTitle(), hairLossPage.expectedTitleOnHairLossPage);
