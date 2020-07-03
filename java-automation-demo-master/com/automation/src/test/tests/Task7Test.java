@@ -15,7 +15,6 @@ public class Task7Test extends BaseTest {
 		hairLossPage.creatingNewAccount(hairLossPage.newEmail);
 		assertEquals(hairLossPage.getText(hairLossPage.actualTitleOnQuestionBlock_11), hairLossPage.expectedTitleOnQuestionBlock_11);	
 		hairLossPage.completingOrder();
-		
 		assertEquals(hairLossPage.getText(hairLossPage.actualTitleAfterOrder), hairLossPage.expectedTitleAfterOrder);
 	}
 }
