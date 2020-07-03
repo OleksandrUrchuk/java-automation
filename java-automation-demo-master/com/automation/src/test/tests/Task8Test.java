@@ -12,7 +12,6 @@ public class Task8Test extends BaseTest {
 		loginPage.login("testmail@harakirimail20.com", "12345678");
 		mainPage.navigetingToAccountPage();
 		accountPage.click(accountPage.yourPlansSection);
-
 		assertEquals(accountPage.getText(accountPage.orderStatus), accountPage.expectedOrderStatusMessage);
 	}
 }
