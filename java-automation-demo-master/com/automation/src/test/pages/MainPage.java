@@ -24,9 +24,15 @@ public class MainPage extends BasePage {
 
 	public final PageElement shopButton = new PageElement("Shop Button", By.cssSelector("span[class='menu__link']"),
 			true);
+
 	public final PageElement hairButton = new PageElement("Hair Button",
 			By.xpath("//a[@class='mobile-menu__item md-screen-hidden']//div[text()='Hair']"), true);
 
+	public final PageElement accountButton = new PageElement("Login Button", By.cssSelector(
+			"body.webp:nth-child(2) div.main-content header.header.header-home div.header__wrap.container.container.container--xl nav.header__menu.flex.justify-content-end:nth-child(3) ul.menu li.menu__item:nth-child(2) > a.menu__link"),
+			true);
+
+	
 	public void closeCookie() {
 		waitToBeClickable(cookies, 5);
 		waitToBeClickable(covidBannerCloseButton, 5);
@@ -43,5 +49,17 @@ public class MainPage extends BasePage {
 		click(shopButton);
 		waitToBeClickable(hairButton);
 		click(hairButton);
+	}
+
+	public void navigetingToLoginPage() {
+		log.info("Navigeting to the: " + LoginPage.class);
+		closeCookie();
+		assertEquals(driver.getTitle(), expectedTitleOnMainPage);
+		click(accountButton);
+	}
+	
+	public void navigetingToAccountPage() {
+		click(accountButton);
+		log.info("Navigeting to the: " + AccountPage.class);
 	}
 }

@@ -6,13 +6,17 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
+import pages.AccountPage;
 import pages.HairLossPage;
+import pages.LoginPage;
 import pages.MainPage;
 
 public class BaseTest {
 
 	protected MainPage mainPage;
 	protected HairLossPage hairLossPage;
+	protected AccountPage accountPage;
+	protected LoginPage loginPage;
 
 	public static WebDriver driver;
 
@@ -35,5 +39,7 @@ public class BaseTest {
 	private void initPages() {
 		mainPage = new MainPage(driver);
 		hairLossPage = new HairLossPage(driver);
+		accountPage = new AccountPage(driver);
+		loginPage = new LoginPage(driver);
 	}
 }

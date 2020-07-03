@@ -11,10 +11,10 @@ public class Task3Test extends BaseTest {
 		mainPage.navigetingToHairLossPage();
 		hairLossPage.waitToBeVisible(hairLossPage.completeHairLossPlanBlock, 5);
 		assertEquals(driver.getTitle(), hairLossPage.expectedTitleOnHairLossPage);
-		hairLossPage.clickAddToCartButton(hairLossPage.addToCartButton_1);
-		hairLossPage.clickCloseCartButton();
+		hairLossPage.clickOnButton(hairLossPage.addToCartButton_1);
+		hairLossPage.clickOnButton(hairLossPage.closeCartButton);
 		// click "added to cart" button
-		hairLossPage.clickAddToCartButton(hairLossPage.addToCartButton_1);
+		hairLossPage.clickOnButton(hairLossPage.addToCartButton_1);
 		assertEquals(hairLossPage.getText(hairLossPage.itemsInCart), "1 ITEM IN CART");
 	}
 }

@@ -447,13 +447,19 @@ public abstract class BasePage {
 		log.info("Scrolling Page to : " + pageElement.name);
 		
         WebElement element = find(pageElement.locator);
-        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
-        Utils.sleep(2000);
-        
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);        
     }
+    
     public void scrollByPixels(int pixels){
     	log.info("Scrolling Page by : " + pixels + " pixels");
         ((JavascriptExecutor) driver).executeScript("window.scrollTo(document.body.scrollHeight, 7000)");  //	add re-useable parameters
         Utils.sleep(2000);
+    }
+    
+    protected void selectCheckBox(PageElement elementCheckBox){
+        if ( !driver.findElement(elementCheckBox.locator).isSelected() )
+        {
+             driver.findElement(elementCheckBox.locator).click();
+        }
     }
 }

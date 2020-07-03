@@ -11,8 +11,8 @@ public class Task4Test extends BaseTest {
 		mainPage.navigetingToHairLossPage();
 		hairLossPage.waitToBeVisible(hairLossPage.completeHairLossPlanBlock, 5);
 		assertEquals(driver.getTitle(), hairLossPage.expectedTitleOnHairLossPage);
-		hairLossPage.clickAddToCartButton(hairLossPage.addToCartButton_2);
-		hairLossPage.clickCloseCartButton();
+		hairLossPage.clickOnButton(hairLossPage.addToCartButton_2);
+		hairLossPage.clickOnButton(hairLossPage.closeCartButton);
 		assertEquals(hairLossPage.getText(hairLossPage.iconCart), "1");
 		assertEquals(hairLossPage.getText(hairLossPage.addedToCartButton), "ADDED TO CART");
 	}
